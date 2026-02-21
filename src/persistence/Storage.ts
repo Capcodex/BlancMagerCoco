@@ -7,7 +7,7 @@ import { ContentPack, HistoryGame, PackSummary, Settings } from '../shared/types
 const DEFAULT_SETTINGS: Settings = {
   winMode: 'judge',
   timerSeconds: 45,
-  level: 'soft',
+  level: 'adult',
   activeTags: [],
   activePackIds: ['core'],
   gameEndMode: 'points',
@@ -45,6 +45,7 @@ export class Storage {
     return {
       ...DEFAULT_SETTINGS,
       ...loaded,
+      level: 'adult',
       timerSeconds: [30, 45, 60].includes(loaded.timerSeconds ?? 45)
         ? (loaded.timerSeconds as 30 | 45 | 60)
         : 45
@@ -52,7 +53,7 @@ export class Storage {
   }
 
   async saveSettings(settings: Settings): Promise<Settings> {
-    const merged = { ...DEFAULT_SETTINGS, ...settings };
+    const merged = { ...DEFAULT_SETTINGS, ...settings, level: 'adult' };
     await this.writeJSON(this.settingsPath, merged);
     return merged;
   }

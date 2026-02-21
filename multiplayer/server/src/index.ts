@@ -38,7 +38,7 @@ interface RoomState {
 
 const DEFAULT_SETTINGS: RoomSettings = {
   timerSeconds: 45,
-  level: 'mid',
+  level: 'adult',
   tags: [],
   winMode: 'judge',
   gameEndMode: 'points',
@@ -303,6 +303,7 @@ io.on('connection', (socket: Socket) => {
     room.settings = {
       ...room.settings,
       ...payload,
+      level: 'adult',
       timerSeconds: [30, 45, 60].includes(Number(payload.timerSeconds))
         ? (payload.timerSeconds as 30 | 45 | 60)
         : room.settings.timerSeconds,

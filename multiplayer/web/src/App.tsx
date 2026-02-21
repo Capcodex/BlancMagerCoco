@@ -225,15 +225,7 @@ export function App() {
                 </select>
 
                 <label>Niveau</label>
-                <select
-                  value={room.settings.level}
-                  disabled={!isHost}
-                  onChange={(e) => updateSetting({ level: e.target.value as 'soft' | 'mid' | 'adult' })}
-                >
-                  <option value="soft">soft</option>
-                  <option value="mid">mid</option>
-                  <option value="adult">adult</option>
-                </select>
+                <input value="trash / adult (unique)" disabled />
 
                 <label>Fin</label>
                 <select

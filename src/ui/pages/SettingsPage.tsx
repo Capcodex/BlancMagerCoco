@@ -45,14 +45,7 @@ export function SettingsPage() {
         </select>
 
         <label>Niveau</label>
-        <select
-          value={settings.level}
-          onChange={(e) => saveSettings({ ...settings, level: e.target.value as 'soft' | 'mid' | 'adult' })}
-        >
-          <option value="soft">soft</option>
-          <option value="mid">mid</option>
-          <option value="adult">adult</option>
-        </select>
+        <input value="trash / adult (unique)" disabled />
 
         <label>Fin de partie</label>
         <select
