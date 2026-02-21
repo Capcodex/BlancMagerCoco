@@ -1,0 +1,63 @@
+{
+  "name": "texte-a-trous-desktop",
+  "version": "1.0.0",
+  "description": "Jeu texte a trous desktop cross-platform",
+  "main": "out/main/index.js",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "preview": "electron-vite preview",
+    "dist": "npm run build && electron-builder",
+    "mp:server:install": "npm --prefix multiplayer/server install",
+    "mp:server:dev": "npm --prefix multiplayer/server run dev",
+    "mp:server:build": "npm --prefix multiplayer/server run build",
+    "mp:server:start": "npm --prefix multiplayer/server run start",
+    "mp:web:install": "npm --prefix multiplayer/web install",
+    "mp:web:dev": "npm --prefix multiplayer/web run dev",
+    "mp:web:build": "npm --prefix multiplayer/web run build",
+    "mp:web:preview": "npm --prefix multiplayer/web run preview",
+    "mp:install": "npm run mp:server:install && npm run mp:web:install",
+    "mp:build": "npm run mp:server:build && npm run mp:web:build"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "uuid": "^11.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/uuid": "^10.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "electron-vite": "^2.3.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "com.limite.texteatrous",
+    "productName": "Texte a trous",
+    "files": [
+      "out/**/*",
+      "resources/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "build"
+    },
+    "mac": {
+      "target": ["dmg"]
+    },
+    "win": {
+      "target": ["nsis"]
+    },
+    "linux": {
+      "target": ["AppImage"]
+    }
+  }
+}
