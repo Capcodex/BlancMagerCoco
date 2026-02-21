@@ -20,6 +20,8 @@ export function App() {
   const [me, setMe] = useState<{ roomId: string; playerId: string } | null>(null);
   const [room, setRoom] = useState<RoomSnapshot | null>(null);
   const [error, setError] = useState('');
+  const [socketState, setSocketState] = useState<'connecting' | 'connected' | 'disconnected'>('connecting');
+  const [pendingAction, setPendingAction] = useState<'create' | 'join' | null>(null);
   const [answer, setAnswer] = useState('');
   const [roundTimer, setRoundTimer] = useState(0);
   const [submitted, setSubmitted] = useState(false);
@@ -28,9 +30,28 @@ export function App() {
     const onUpdate = (snapshot: RoomSnapshot) => {
       setRoom(snapshot);
     };
+    const onConnect = () => {
+      setSocketState('connected');
+    };
+    const onDisconnect = () => {
+      setSocketState('disconnected');
+    };
+    const onConnectError = () => {
+      setSocketState('disconnected');
+      setError(`Connexion API impossible (${API_URL}). Verifie VITE_API_URL et l'etat du service API.`);
+    };
+
+    setSocketState(socket.connected ? 'connected' : 'connecting');
     socket.on('room:update', onUpdate);
+    socket.on('connect', onConnect);
+    socket.on('disconnect', onDisconnect);
+    socket.on('connect_error', onConnectError);
+
     return () => {
       socket.off('room:update', onUpdate);
+      socket.off('connect', onConnect);
+      socket.off('disconnect', onDisconnect);
+      socket.off('connect_error', onConnectError);
       socket.close();
     };
   }, [socket]);
@@ -65,10 +86,20 @@ export function App() {
   };
 
   const createRoom = () => {
+    if (!socket.connected) {
+      setError(`API non connectee (${API_URL}).`);
+      return;
+    }
     setError('');
-    socket.emit('room:create', { name }, (res: JoinResult) => {
-      if (!res.ok || !res.roomId || !res.playerId) {
-        setError(res.error ?? 'Creation impossible');
+    setPendingAction('create');
+    socket.timeout(8000).emit('room:create', { name: name.trim() }, (err: unknown, res: JoinResult) => {
+      setPendingAction(null);
+      if (err) {
+        setError('Creation timeout: API indisponible ou trop lente.');
+        return;
+      }
+      if (!res?.ok || !res.roomId || !res.playerId) {
+        setError(res?.error ?? 'Creation impossible');
         return;
       }
       setMe({ roomId: res.roomId, playerId: res.playerId });
@@ -76,14 +107,28 @@ export function App() {
   };
 
   const joinRoom = () => {
+    if (!socket.connected) {
+      setError(`API non connectee (${API_URL}).`);
+      return;
+    }
     setError('');
-    socket.emit('room:join', { roomId: roomIdInput, name }, (res: JoinResult) => {
-      if (!res.ok || !res.roomId || !res.playerId) {
-        setError(res.error ?? 'Connexion impossible');
-        return;
+    setPendingAction('join');
+    socket.timeout(8000).emit(
+      'room:join',
+      { roomId: roomIdInput.trim().toUpperCase(), name: name.trim() },
+      (err: unknown, res: JoinResult) => {
+        setPendingAction(null);
+        if (err) {
+          setError('Connexion timeout: API indisponible ou trop lente.');
+          return;
+        }
+        if (!res?.ok || !res.roomId || !res.playerId) {
+          setError(res?.error ?? 'Connexion impossible');
+          return;
+        }
+        setMe({ roomId: res.roomId, playerId: res.playerId });
       }
-      setMe({ roomId: res.roomId, playerId: res.playerId });
-    });
+    );
   };
 
   if (!me || !room) {
@@ -92,13 +137,15 @@ export function App() {
         <div className="panel">
           <h1>Limite Multiplayer</h1>
           <p>Version web multijoueur (Render-ready)</p>
+          <p>API: {API_URL}</p>
+          <p>Socket: {socketState}</p>
 
           <label>Ton pseudo</label>
           <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Pseudo" />
 
           <div className="row">
-            <button className="btn" onClick={createRoom} disabled={!name.trim()}>
-              Creer une room
+            <button className="btn" onClick={createRoom} disabled={!name.trim() || pendingAction !== null}>
+              {pendingAction === 'create' ? 'Creation...' : 'Creer une room'}
             </button>
           </div>
 
@@ -108,8 +155,12 @@ export function App() {
             onChange={(e) => setRoomIdInput(e.target.value.toUpperCase())}
             placeholder="ABC123"
           />
-          <button className="btn secondary" onClick={joinRoom} disabled={!name.trim() || !roomIdInput.trim()}>
-            Rejoindre
+          <button
+            className="btn secondary"
+            onClick={joinRoom}
+            disabled={!name.trim() || !roomIdInput.trim() || pendingAction !== null}
+          >
+            {pendingAction === 'join' ? 'Connexion...' : 'Rejoindre'}
           </button>
           {error && <p className="error">{error}</p>}
         </div>
