@@ -40,6 +40,8 @@ npm run mp:web:dev
    - `limite-game-web` (Static)
 5. Une fois deploye, partager l'URL du service web avec les joueurs.
 
+Important: `VITE_API_URL` doit pointer vers l'URL publique de l'API (pas l'host prive).
+
 ## Gameplay reseau supporte
 
 - Room code (creation/join)
