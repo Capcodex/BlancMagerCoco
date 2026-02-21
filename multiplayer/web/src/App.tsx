@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type KeyboardEvent } from 'react';
 import { io, Socket } from 'socket.io-client';
 import { RoomSnapshot, RoomSettings } from './types';
 
@@ -22,7 +22,8 @@ export function App() {
   const [error, setError] = useState('');
   const [socketState, setSocketState] = useState<'connecting' | 'connected' | 'disconnected'>('connecting');
   const [pendingAction, setPendingAction] = useState<'create' | 'join' | null>(null);
-  const [answer, setAnswer] = useState('');
+  const [answerA, setAnswerA] = useState('');
+  const [answerB, setAnswerB] = useState('');
   const [roundTimer, setRoundTimer] = useState(0);
   const [submitted, setSubmitted] = useState(false);
 
@@ -58,7 +59,8 @@ export function App() {
 
   useEffect(() => {
     setSubmitted(false);
-    setAnswer('');
+    setAnswerA('');
+    setAnswerB('');
   }, [room?.roundIndex]);
 
   useEffect(() => {
@@ -84,6 +86,19 @@ export function App() {
 
   const updateSetting = (partial: Partial<RoomSettings>) => {
     socket.emit('game:update_settings', partial);
+  };
+
+  const submitRoundAnswer = () => {
+    if (!room || !shouldAnswer || submitted) return;
+    const answer = room.holesCount === 2 ? `${answerA.trim()} | ${answerB.trim()}` : answerA.trim();
+    socket.emit('round:submit', { answer });
+    setSubmitted(true);
+  };
+
+  const onEnterSubmit = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    submitRoundAnswer();
   };
 
   const createRoom = () => {
@@ -264,22 +279,34 @@ export function App() {
               ) : (
                 <>
                   <label>Ta reponse</label>
-                  <textarea
-                    value={answer}
-                    onChange={(e) => setAnswer(e.target.value)}
-                    rows={4}
-                    placeholder={room.holesCount === 2 ? 'texte1 | texte2' : 'texte'}
-                    disabled={submitted}
-                  />
+                  {room.holesCount === 2 ? (
+                    <>
+                      <input
+                        value={answerA}
+                        onChange={(e) => setAnswerA(e.target.value)}
+                        onKeyDown={onEnterSubmit}
+                        placeholder="Texte 1"
+                        disabled={submitted}
+                      />
+                      <input
+                        value={answerB}
+                        onChange={(e) => setAnswerB(e.target.value)}
+                        onKeyDown={onEnterSubmit}
+                        placeholder="Texte 2"
+                        disabled={submitted}
+                      />
+                    </>
+                  ) : (
+                    <input
+                      value={answerA}
+                      onChange={(e) => setAnswerA(e.target.value)}
+                      onKeyDown={onEnterSubmit}
+                      placeholder="Texte"
+                      disabled={submitted}
+                    />
+                  )}
                   <div className="row">
-                    <button
-                      className="btn"
-                      onClick={() => {
-                        socket.emit('round:submit', { answer });
-                        setSubmitted(true);
-                      }}
-                      disabled={!shouldAnswer || submitted}
-                    >
+                    <button className="btn" onClick={submitRoundAnswer} disabled={!shouldAnswer || submitted}>
                       {submitted ? 'Reponse envoyee' : 'Envoyer'}
                     </button>
                     {(isHost || isJudge) && (

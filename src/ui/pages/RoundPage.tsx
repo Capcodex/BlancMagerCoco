@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useState, type KeyboardEvent } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useGame } from '../context/GameContext';
 
@@ -16,7 +16,8 @@ export function RoundPage() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showPassScreen, setShowPassScreen] = useState(true);
-  const [value, setValue] = useState('');
+  const [answerA, setAnswerA] = useState('');
+  const [answerB, setAnswerB] = useState('');
   const [timer, setTimer] = useState(settings?.timerSeconds ?? 45);
 
   useEffect(() => {
@@ -58,8 +59,13 @@ export function RoundPage() {
 
   const onSubmit = () => {
     if (!activePlayer) return;
-    submitAnswer(activePlayer.id, value.trim());
-    setValue('');
+    const answer =
+      currentRound.template.holesCount === 2
+        ? `${answerA.trim()} | ${answerB.trim()}`
+        : answerA.trim();
+    submitAnswer(activePlayer.id, answer);
+    setAnswerA('');
+    setAnswerB('');
 
     if (currentIndex + 1 >= responders.length) {
       lockRound();
@@ -71,6 +77,12 @@ export function RoundPage() {
     if (settings.hideInputMode) {
       setShowPassScreen(true);
     }
+  };
+
+  const onEnterSubmit = (e: KeyboardEvent<HTMLInputElement>) => {
+    if (e.key !== 'Enter') return;
+    e.preventDefault();
+    onSubmit();
   };
 
   return (
@@ -89,7 +101,7 @@ export function RoundPage() {
         </p>
         <p>
           {currentRound.template.holesCount === 2
-            ? "2 trous: saisis 'texte1 | texte2'"
+            ? '2 trous: remplis les 2 champs'
             : '1 trou: saisis une proposition'}
         </p>
       </div>
@@ -105,13 +117,31 @@ export function RoundPage() {
       ) : (
         <div className="card stack">
           <h3>Tour de {activePlayer?.name}</h3>
-          <textarea
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-            placeholder="Ta reponse"
-            rows={4}
-            autoFocus
-          />
+          {currentRound.template.holesCount === 2 ? (
+            <>
+              <input
+                value={answerA}
+                onChange={(e) => setAnswerA(e.target.value)}
+                onKeyDown={onEnterSubmit}
+                placeholder="Texte 1"
+                autoFocus
+              />
+              <input
+                value={answerB}
+                onChange={(e) => setAnswerB(e.target.value)}
+                onKeyDown={onEnterSubmit}
+                placeholder="Texte 2"
+              />
+            </>
+          ) : (
+            <input
+              value={answerA}
+              onChange={(e) => setAnswerA(e.target.value)}
+              onKeyDown={onEnterSubmit}
+              placeholder="Ta reponse"
+              autoFocus
+            />
+          )}
           <button className="btn" onClick={onSubmit}>
             Verrouiller ma reponse
           </button>
