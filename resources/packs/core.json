@@ -1,138 +1,1273 @@
 {
   "id": "core",
   "name": "Core Trash Adult Only",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "subjects": [
-    { "id": "s1", "text": "Diner de famille sans filtre", "level": "adult", "tags": ["trash", "family", "adult"] },
-    { "id": "s2", "text": "Afterwork moralement douteux", "level": "adult", "tags": ["trash", "work", "adult"] },
-    { "id": "s3", "text": "Date catastrophe annoncee", "level": "adult", "tags": ["trash", "romance", "adult"] },
-    { "id": "s4", "text": "Roadtrip de mauvaises idees", "level": "adult", "tags": ["trash", "travel", "chaos"] },
-    { "id": "s5", "text": "Groupe d'amis toxique", "level": "adult", "tags": ["trash", "social", "toxic"] },
-    { "id": "s6", "text": "Mariage qui part en vrille", "level": "adult", "tags": ["trash", "ceremony", "chaos"] },
-    { "id": "s7", "text": "Week-end full regrets", "level": "adult", "tags": ["trash", "night", "adult"] },
-    { "id": "s8", "text": "Coloc a risque", "level": "adult", "tags": ["trash", "home", "chaos"] },
-    { "id": "s9", "text": "Noel avec secrets explosifs", "level": "adult", "tags": ["trash", "family", "secret"] },
-    { "id": "s10", "text": "Soiree de reunion d'anciens", "level": "adult", "tags": ["trash", "social", "awkward"] },
-    { "id": "s11", "text": "DM envoye a la mauvaise personne", "level": "adult", "tags": ["trash", "internet", "awkward"] },
-    { "id": "s12", "text": "Vacances entre ex", "level": "adult", "tags": ["trash", "travel", "romance"] },
-    { "id": "s13", "text": "Brunch de lendemain difficile", "level": "adult", "tags": ["trash", "party", "adult"] },
-    { "id": "s14", "text": "Bureau sans RH", "level": "adult", "tags": ["trash", "work", "dark"] },
-    { "id": "s15", "text": "Diner romantique rate", "level": "adult", "tags": ["trash", "romance", "awkward"] },
-    { "id": "s16", "text": "Action-verite trop loin", "level": "adult", "tags": ["trash", "game", "adult"] },
-    { "id": "s17", "text": "Appartement after-party", "level": "adult", "tags": ["trash", "party", "chaos"] },
-    { "id": "s18", "text": "Retrouvailles de collegues", "level": "adult", "tags": ["trash", "work", "social"] },
-    { "id": "s19", "text": "Nuit blanche mal geree", "level": "adult", "tags": ["trash", "night", "dark"] },
-    { "id": "s20", "text": "Frontiere morale depassee", "level": "adult", "tags": ["trash", "limit", "adult"] }
+    {
+      "id": "s1",
+      "text": "Diner de famille sans filtre",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "family",
+        "adult"
+      ]
+    },
+    {
+      "id": "s2",
+      "text": "Afterwork moralement douteux",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "work",
+        "adult"
+      ]
+    },
+    {
+      "id": "s3",
+      "text": "Date catastrophe annoncee",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "romance",
+        "adult"
+      ]
+    },
+    {
+      "id": "s4",
+      "text": "Roadtrip de mauvaises idees",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "travel",
+        "chaos"
+      ]
+    },
+    {
+      "id": "s5",
+      "text": "Groupe d'amis toxique",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "social",
+        "toxic"
+      ]
+    },
+    {
+      "id": "s6",
+      "text": "Mariage qui part en vrille",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "ceremony",
+        "chaos"
+      ]
+    },
+    {
+      "id": "s7",
+      "text": "Week-end full regrets",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "night",
+        "adult"
+      ]
+    },
+    {
+      "id": "s8",
+      "text": "Coloc a risque",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "home",
+        "chaos"
+      ]
+    },
+    {
+      "id": "s9",
+      "text": "Noel avec secrets explosifs",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "family",
+        "secret"
+      ]
+    },
+    {
+      "id": "s10",
+      "text": "Soiree de reunion d'anciens",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "social",
+        "awkward"
+      ]
+    },
+    {
+      "id": "s11",
+      "text": "DM envoye a la mauvaise personne",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "internet",
+        "awkward"
+      ]
+    },
+    {
+      "id": "s12",
+      "text": "Vacances entre ex",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "travel",
+        "romance"
+      ]
+    },
+    {
+      "id": "s13",
+      "text": "Brunch de lendemain difficile",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "party",
+        "adult"
+      ]
+    },
+    {
+      "id": "s14",
+      "text": "Bureau sans RH",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "work",
+        "dark"
+      ]
+    },
+    {
+      "id": "s15",
+      "text": "Diner romantique rate",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "romance",
+        "awkward"
+      ]
+    },
+    {
+      "id": "s16",
+      "text": "Action-verite trop loin",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "game",
+        "adult"
+      ]
+    },
+    {
+      "id": "s17",
+      "text": "Appartement after-party",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "party",
+        "chaos"
+      ]
+    },
+    {
+      "id": "s18",
+      "text": "Retrouvailles de collegues",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "work",
+        "social"
+      ]
+    },
+    {
+      "id": "s19",
+      "text": "Nuit blanche mal geree",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "night",
+        "dark"
+      ]
+    },
+    {
+      "id": "s20",
+      "text": "Frontiere morale depassee",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "limit",
+        "adult"
+      ]
+    }
   ],
   "templates": [
-    { "id": "t1", "text": "Le toast qui tue l'ambiance: ___", "level": "adult", "tags": ["trash", "ceremony"], "holesCount": 1 },
-    { "id": "t2", "text": "Le message vocal que je regrette: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-    { "id": "t3", "text": "Ma meilleure mauvaise idee a minuit: ___", "level": "adult", "tags": ["trash", "night"], "holesCount": 1 },
-    { "id": "t4", "text": "Le red flag que j'ignore toujours: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t5", "text": "Mon excuse la plus douteuse: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t6", "text": "Le souvenir de soiree qu'on nie tous: ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t7", "text": "La phrase qui fait appeler RH: ___", "level": "adult", "tags": ["trash", "work"], "holesCount": 1 },
-    { "id": "t8", "text": "Mon talent socialement dangereux: ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-    { "id": "t9", "text": "Le pire conseil sentimental recu: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t10", "text": "Le truc que je poste puis supprime: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-
-    { "id": "t11", "text": "Mon plan de secours en date foireux: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t12", "text": "Le pire moment pour avouer ___", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 1 },
-    { "id": "t13", "text": "La promesse que je ne tiens jamais: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t14", "text": "Le detail qui transforme un flirt en drame: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t15", "text": "Mon mode autopilot en lendemain de fete: ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t16", "text": "La raison officielle de mon retard: ___", "level": "adult", "tags": ["trash", "work"], "holesCount": 1 },
-    { "id": "t17", "text": "Le sujet interdit au repas de famille: ___", "level": "adult", "tags": ["trash", "family"], "holesCount": 1 },
-    { "id": "t18", "text": "La pire facon d'ouvrir une conversation: ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-    { "id": "t19", "text": "Mon auto-sabotage preferee: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t20", "text": "L'erreur qui a lance la catastrophe: ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 1 },
-
-    { "id": "t21", "text": "Je suis reste trop longtemps avec ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t22", "text": "Le mensonge le plus rentable: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t23", "text": "La phrase la plus passive-agressive: ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-    { "id": "t24", "text": "Mon alibi premium apres minuit: ___", "level": "adult", "tags": ["trash", "night"], "holesCount": 1 },
-    { "id": "t25", "text": "Le truc que j'aurais du garder pour moi: ___", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 1 },
-    { "id": "t26", "text": "Le DM qui detruit une relation: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-    { "id": "t27", "text": "Le moment exact ou ca derape: ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 1 },
-    { "id": "t28", "text": "La phrase de rupture la plus nulle: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t29", "text": "Mon niveau de dignite apres cette soiree: ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t30", "text": "Le silence le plus suspect de ma vie: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-
-    { "id": "t31", "text": "J'ai remplace l'honnetete par ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t32", "text": "Mon comportement le plus toxique: ___", "level": "adult", "tags": ["trash", "toxic"], "holesCount": 1 },
-    { "id": "t33", "text": "Le pire cadeau pour un mariage: ___", "level": "adult", "tags": ["trash", "ceremony"], "holesCount": 1 },
-    { "id": "t34", "text": "La promesse de couple la plus fragile: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t35", "text": "Le commentaire que je n'aurais pas du liker: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-    { "id": "t36", "text": "Le petit detail qui me fait fuir: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t37", "text": "Mon ex m'a quitte pour ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t38", "text": "Le plan qui semblait genial avec alcool: ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t39", "text": "L'argument le plus honteux que j'ai utilise: ___", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 1 },
-    { "id": "t40", "text": "Le probleme, c'etait clairement ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-
-    { "id": "t41", "text": "J'ai cru que ___ etait une bonne idee", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 1 },
-    { "id": "t42", "text": "La capture d'ecran compromettante: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-    { "id": "t43", "text": "Le secret de groupe qu'on protege: ___", "level": "adult", "tags": ["trash", "secret"], "holesCount": 1 },
-    { "id": "t44", "text": "La phrase qui tue un date: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t45", "text": "Le comportement qui me fait perdre foi en l'humanite: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t46", "text": "Mon excuse pour ghoster quelqu'un: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t47", "text": "Le pire moment pour appeler son ex: ___", "level": "adult", "tags": ["trash", "night"], "holesCount": 1 },
-    { "id": "t48", "text": "La ligne rouge que j'ai franchie: ___", "level": "adult", "tags": ["trash", "limit"], "holesCount": 1 },
-    { "id": "t49", "text": "Mon role dans le chaos collectif: ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 1 },
-    { "id": "t50", "text": "La phrase la plus hypocrite du bureau: ___", "level": "adult", "tags": ["trash", "work"], "holesCount": 1 },
-
-    { "id": "t51", "text": "Le duo qui finit toujours mal: ___ et ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 2 },
-    { "id": "t52", "text": "Mon combo toxique prefere: ___ + ___", "level": "adult", "tags": ["trash", "toxic"], "holesCount": 2 },
-    { "id": "t53", "text": "J'ai dit ___ mais je pensais ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 2 },
-    { "id": "t54", "text": "Le date commence par ___ et finit par ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 2 },
-    { "id": "t55", "text": "Mon plan A: ___, mon plan B: ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 2 },
-    { "id": "t56", "text": "Le duo de mensonges parfait: ___ et ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 2 },
-    { "id": "t57", "text": "J'ai confondu ___ avec ___ en public", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 2 },
-    { "id": "t58", "text": "La soiree a bascule entre ___ et ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 2 },
-    { "id": "t59", "text": "Le pire pacte: ___ contre ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 2 },
-    { "id": "t60", "text": "Mon duo de drapeaux rouges: ___ et ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 2 },
-
-    { "id": "t61", "text": "Au bureau, j'ai choisi ___ plutot que ___", "level": "adult", "tags": ["trash", "work"], "holesCount": 2 },
-    { "id": "t62", "text": "Le cadeau de rupture ideal: ___ avec ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 2 },
-    { "id": "t63", "text": "Pour sauver l'ambiance, j'ai tente ___ puis ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 2 },
-    { "id": "t64", "text": "Le plan de vacances toxique: ___ + ___", "level": "adult", "tags": ["trash", "travel"], "holesCount": 2 },
-    { "id": "t65", "text": "J'ai perdu ___ a cause de ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 2 },
-    { "id": "t66", "text": "Le mensonge du dimanche: ___ pour cacher ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 2 },
-    { "id": "t67", "text": "Mon ex m'a appris ___ puis ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 2 },
-    { "id": "t68", "text": "La recette du desastre: ___ avec ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 2 },
-    { "id": "t69", "text": "Le speech de mariage contenait ___ et ___", "level": "adult", "tags": ["trash", "ceremony"], "holesCount": 2 },
-    { "id": "t70", "text": "Le DM fatal: ___ suivi de ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 2 },
-
-    { "id": "t71", "text": "J'ai promis ___ pour obtenir ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 2 },
-    { "id": "t72", "text": "Mon duo de survie sociale: ___ puis ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 2 },
-    { "id": "t73", "text": "Le meilleur moyen de rater un date: ___ + ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 2 },
-    { "id": "t74", "text": "La coloc a explose entre ___ et ___", "level": "adult", "tags": ["trash", "home"], "holesCount": 2 },
-    { "id": "t75", "text": "Mon plan culinaire du lendemain: ___ avec ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 2 },
-    { "id": "t76", "text": "J'ai remplace ___ par ___ et c'etait pire", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 2 },
-    { "id": "t77", "text": "Le duo de phrases interdites: ___ et ___", "level": "adult", "tags": ["trash", "family"], "holesCount": 2 },
-    { "id": "t78", "text": "Mon strategy kit: ___, ___, et prier", "level": "adult", "tags": ["trash", "dark"], "holesCount": 2 },
-    { "id": "t79", "text": "Le verdict de groupe: ___ plutot que ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 2 },
-    { "id": "t80", "text": "J'ai choisi ___ alors que ___ etait evident", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 2 },
-
-    { "id": "t81", "text": "La confession la plus risquee de ma vie: ___", "level": "adult", "tags": ["trash", "confession"], "holesCount": 1 },
-    { "id": "t82", "text": "Mon reflexe toxique en couple: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t83", "text": "Le running gag le plus sombre de mon groupe: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t84", "text": "Le choix le plus discutable du week-end: ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t85", "text": "La phrase qui annonce une nuit longue: ___", "level": "adult", "tags": ["trash", "night"], "holesCount": 1 },
-    { "id": "t86", "text": "Le detail qui rend ma version suspecte: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t87", "text": "Mon attitude la plus faux-calme: ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-    { "id": "t88", "text": "Le texte que je n'aurais jamais du envoyer: ___", "level": "adult", "tags": ["trash", "internet"], "holesCount": 1 },
-    { "id": "t89", "text": "Le souvenir de vacances qu'on cache: ___", "level": "adult", "tags": ["trash", "travel"], "holesCount": 1 },
-    { "id": "t90", "text": "Mon argument de mauvaise foi ultime: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-
-    { "id": "t91", "text": "Le coupable ideal dans mon groupe: ___", "level": "adult", "tags": ["trash", "social"], "holesCount": 1 },
-    { "id": "t92", "text": "Le detail qui me fait perdre toute dignite: ___", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 1 },
-    { "id": "t93", "text": "Le comportement qui devrait etre interdit en date: ___", "level": "adult", "tags": ["trash", "romance"], "holesCount": 1 },
-    { "id": "t94", "text": "Mon role exact dans ce drame: ___", "level": "adult", "tags": ["trash", "chaos"], "holesCount": 1 },
-    { "id": "t95", "text": "Le pire moment pour sortir cette blague: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t96", "text": "Mon filtre social est mort quand ___", "level": "adult", "tags": ["trash", "party"], "holesCount": 1 },
-    { "id": "t97", "text": "Le sujet qui transforme un repas en guerre: ___", "level": "adult", "tags": ["trash", "family"], "holesCount": 1 },
-    { "id": "t98", "text": "Mon conseil le plus dangereux: ___", "level": "adult", "tags": ["trash", "dark"], "holesCount": 1 },
-    { "id": "t99", "text": "Le deal que je n'aurais pas du accepter: ___", "level": "adult", "tags": ["trash", "limit"], "holesCount": 1 },
-    { "id": "t100", "text": "La raison reelle de mon sourire force: ___", "level": "adult", "tags": ["trash", "awkward"], "holesCount": 1 }
+    {
+      "id": "t1",
+      "text": "Pour eviter l'ejaculation precoce, je pense souvent a ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "18plus"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t2",
+      "text": "Si ___ n'existait pas, je serais encore vierge.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "18plus"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t3",
+      "text": "Depuis que j'ai surpris ma mere en train de ___, je ne peux plus la regarder dans les yeux.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "family"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t4",
+      "text": "J'ai remplace ___ par ___ et c'etait pire.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t5",
+      "text": "Quand mon date a sorti ___, j'ai su que la soiree etait morte.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "party"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t6",
+      "text": "Je voulais paraitre sexy, mais ___ a tout ruine.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t7",
+      "text": "Mon plan cul est devenu serieux quand ___ a rencontre ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t8",
+      "text": "Je deviens tres romantique apres ___, puis je regrette.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "dark"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t9",
+      "text": "Au premier rendez-vous, je demande toujours ___ pour gagner du temps.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t10",
+      "text": "Mon excuse pour envoyer un nude flou: ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t11",
+      "text": "Le pire dirty talk commence toujours par ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t12",
+      "text": "J'ai cru que ___ etait un sextoy, c'etait en fait ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t13",
+      "text": "Quand je suis stresse avant le sexe, je respire et je pense a ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t14",
+      "text": "La seule facon de sauver mon ego apres un rate: ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t15",
+      "text": "Mon ex disait que ___ etait mignon, moi j'appelais ca ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t16",
+      "text": "Le moment exact ou la tension sexuelle devient genante: quand ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t17",
+      "text": "J'etais chaud, puis ___ a sonne a la porte.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t18",
+      "text": "J'ai menti sur ___ pour paraitre plus experimente.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t19",
+      "text": "Le pire compliment qu'on m'ait fait nu: ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t20",
+      "text": "Je me suis deja endormi pendant ___, et je m'en veux encore.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t21",
+      "text": "Pour chauffer l'ambiance, j'ai propose ___ et tout le monde a dit non.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t22",
+      "text": "Le date parfait commence par ___ et finit par ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t23",
+      "text": "Ma specialite en after: oublier ___ chez ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "party",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t24",
+      "text": "J'ai voulu jouer le dominant, puis ___ a inverse les roles.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t25",
+      "text": "Ma phrase de seduction la plus honteuse: ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "dark"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t26",
+      "text": "Quand quelqu'un dit 'fais-moi rever', je reponds ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t27",
+      "text": "Le red flag ultime: quelqu'un qui fait ___ juste avant ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t28",
+      "text": "Mon cerveau coupe quand ___ me murmure ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t29",
+      "text": "Je suis tombe amoureux apres avoir vu ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t30",
+      "text": "Le pire lieu pour un quickie reste ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t31",
+      "text": "J'ai cru qu'on etait exclusifs, puis j'ai vu ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t32",
+      "text": "Mon fetish le plus incompris implique ___ et ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t33",
+      "text": "Je deviens jaloux quand ___ like toutes les photos de ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "internet"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t34",
+      "text": "Le texto 'tu dors ?' cache toujours ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "internet"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t35",
+      "text": "J'ai refuse un plan parce que ___ sentait ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t36",
+      "text": "Le meilleur moyen de casser une erection: ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t37",
+      "text": "Pour paraitre mature, j'ai dit que j'aimais ___, c'etait faux.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t38",
+      "text": "J'ai deja confondu lubrifiant et ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t39",
+      "text": "Apres deux verres, je promets ___ a ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "party"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t40",
+      "text": "Le silence le plus long de ma vie: apres ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t41",
+      "text": "Je pensais etre discret, puis ___ a allume la lumiere.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t42",
+      "text": "Mon pire rebond sentimental commence par ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t43",
+      "text": "J'ai decouvert que mon crush faisait ___ en secret.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t44",
+      "text": "Le date est devenu bizarre quand ___ a sorti ___ de son sac.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t45",
+      "text": "Je me sens invincible jusqu'a ce que ___ me rappelle ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t46",
+      "text": "Mon type ideal ressemble surtout a ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t47",
+      "text": "Le truc que je n'assumerai jamais devant mes potes: ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t48",
+      "text": "J'ai dit 'je t'aime' juste apres ___, mauvaise idee.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t49",
+      "text": "Mon confidence level tombe a zero quand ___ rit de ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t50",
+      "text": "La pire phrase post-sexe: '___'.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t51",
+      "text": "J'ai pretendu aimer ___ pour conclure.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t52",
+      "text": "Le pacte de couple le plus toxique: ___ contre ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "toxic"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t53",
+      "text": "J'ai ghoste quelqu'un pour ___, puis je suis revenu pour ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t54",
+      "text": "Le detail qui me fait perdre tout desir: ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t55",
+      "text": "J'ai cru a une relation saine, puis ___ a demande mon code.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t56",
+      "text": "Mon fantasme devient ridicule des que ___ apparait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t57",
+      "text": "Le meilleur pretexte pour ne pas dormir seul: ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t58",
+      "text": "J'ai connu la honte quand ___ a trouve ___ sous le lit.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex",
+        "dark"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t59",
+      "text": "Le dimanche matin, je regrette surtout ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "dark"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t60",
+      "text": "Ma libido disparait quand ___ parle de ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t61",
+      "text": "On voulait juste discuter, puis ___ a enleve ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t62",
+      "text": "Le mot qui tue instantanement l'ambiance: ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t63",
+      "text": "J'ai essaye d'etre tendre, mais ___ a prefere ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t64",
+      "text": "Mon plan 'soir romantique' a fini en ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "party"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t65",
+      "text": "La position qui ruine mon dos mais pas mon ego: ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t66",
+      "text": "J'ai menti sur mon nombre de partenaires: ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t67",
+      "text": "Le pire timing pour recevoir un appel: pendant ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t68",
+      "text": "J'ai confondu sexting avec ___ et c'etait dramatique.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "sex",
+        "dark"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t69",
+      "text": "Mon ex m'a bloque apres que j'ai propose ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t70",
+      "text": "Je me suis senti sale apres ___, puis j'ai recommence.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "dark"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t71",
+      "text": "Le souvenir qui me hante encore: ___ dans ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t72",
+      "text": "J'etais pret, puis ___ a prononce le prenom de ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t73",
+      "text": "Le rendez-vous le plus court de ma vie: ___ minutes apres ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t74",
+      "text": "J'ai decouvert un nouveau kink le jour ou ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t75",
+      "text": "Le plan a trois a echoue quand ___ a exige ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "18plus"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t76",
+      "text": "Je fais semblant d'etre cool avec ___, mais ca me rend fou.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t77",
+      "text": "Ma pire idee de reconquete: ___ devant ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t78",
+      "text": "J'ai voulu etre subtil, alors j'ai envoye ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t79",
+      "text": "Le mot de passe de mon coeur est ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t80",
+      "text": "Le meilleur contraceptif reste ___ quand ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t81",
+      "text": "J'ai couche trop vite parce que ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t82",
+      "text": "Le plus grand mensonge en date: '___'.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t83",
+      "text": "On a arrete parce que ___ faisait trop de bruit.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t84",
+      "text": "J'ai voulu surprendre mon/ma partenaire avec ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t85",
+      "text": "Le pire roleplay commence toujours par ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t86",
+      "text": "Je me croyais irresistible jusqu'a ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t87",
+      "text": "La phrase que je ne veux plus jamais entendre au lit: ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t88",
+      "text": "J'ai pense mariage apres ___, puis j'ai pris une douche froide.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t89",
+      "text": "Le dinner date s'est transforme en audition pour ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t90",
+      "text": "Mon secret pour tenir plus longtemps: penser a ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t91",
+      "text": "Je me suis deja excuse pour ___ en offrant ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t92",
+      "text": "Le pire cadeau de Saint-Valentin: ___, puis j'ai fait comme si de rien n'etait.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t93",
+      "text": "On a dit 'pas de sentiments', puis ___ a fait ___, et personne n'a su quoi repondre.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t94",
+      "text": "Mon voisin sait trop de choses depuis ___, puis j'ai pretendu que c'etait normal.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t95",
+      "text": "Le test de compatibilite ultime: ___ avant ___, et l'ambiance est morte en 3 secondes.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "sex"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t96",
+      "text": "J'ai compris que c'etait toxique quand ___ controlait ___, puis j'ai blame l'alcool.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "toxic"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t97",
+      "text": "Le plus gros turn-off: ___ qui parle de ___, et mon ego a quitte la piece.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 2
+    },
+    {
+      "id": "t98",
+      "text": "Je pensais etre open-minded, puis j'ai vu ___, puis j'ai demande a changer de sujet.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t99",
+      "text": "Mon cerveau dit non, mais ___ dit oui.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult"
+      ],
+      "holesCount": 1
+    },
+    {
+      "id": "t100",
+      "text": "La seule chose plus dangereuse qu'un ex bourre: ___, et tout le monde a regarde ses chaussures.",
+      "level": "adult",
+      "tags": [
+        "trash",
+        "adult",
+        "romance",
+        "party",
+        "dark"
+      ],
+      "holesCount": 1
+    }
   ]
 }
