@@ -78,6 +78,9 @@ export class GameEngine {
   submitResponse(playerId: string, answerRaw: string): void {
     if (!this.roundState) throw new Error('Manche non demarree.');
     if (this.roundState.locked) throw new Error('Reponses verrouillees.');
+    if (playerId === this.roundState.judgePlayerId) {
+      throw new Error('Le juge ne participe pas a la reponse.');
+    }
     const existing = this.roundState.responses.find((r) => r.playerId === playerId);
     if (existing) {
       existing.answerRaw = answerRaw;
@@ -90,11 +93,16 @@ export class GameEngine {
     if (!this.roundState) throw new Error('Manche non demarree.');
     this.roundState.locked = true;
 
-    this.revealResponses = this.roundState.responses
-      .map((r, i) => ({
+    const responsesByPlayer = new Map(this.roundState.responses.map((r) => [r.playerId, r.answerRaw]));
+    const responderIds = this.players
+      .map((p) => p.id)
+      .filter((id) => id !== this.roundState?.judgePlayerId);
+
+    this.revealResponses = responderIds
+      .map((playerId, i) => ({
         id: `resp-${this.roundState?.index}-${i + 1}`,
-        answerRaw: r.answerRaw,
-        playerId: r.playerId
+        answerRaw: responsesByPlayer.get(playerId) ?? '',
+        playerId
       }))
       .sort(() => Math.random() - 0.5);
 

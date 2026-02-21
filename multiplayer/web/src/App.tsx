@@ -80,6 +80,7 @@ export function App() {
   const isHost = !!room && me?.playerId === room.hostPlayerId;
   const isJudge = !!room && me?.playerId === room.judgePlayerId;
   const isCurrentVoter = !!room && me?.playerId === room.currentVoterId;
+  const shouldAnswer = !!room && !isJudge && room.phase === 'round';
 
   const updateSetting = (partial: Partial<RoomSettings>) => {
     socket.emit('game:update_settings', partial);
@@ -266,31 +267,37 @@ export function App() {
                 Timer: <strong>{roundTimer}s</strong>
               </p>
 
-              <label>Ta reponse</label>
-              <textarea
-                value={answer}
-                onChange={(e) => setAnswer(e.target.value)}
-                rows={4}
-                placeholder={room.holesCount === 2 ? 'texte1 | texte2' : 'texte'}
-                disabled={submitted}
-              />
-              <div className="row">
-                <button
-                  className="btn"
-                  onClick={() => {
-                    socket.emit('round:submit', { answer });
-                    setSubmitted(true);
-                  }}
-                  disabled={submitted}
-                >
-                  {submitted ? 'Reponse envoyee' : 'Envoyer'}
-                </button>
-                {(isHost || isJudge) && (
-                  <button className="btn secondary" onClick={() => socket.emit('round:lock')}>
-                    Verrouiller les reponses
-                  </button>
-                )}
-              </div>
+              {isJudge ? (
+                <p>Tu es le juge cette manche: tu ne proposes pas de reponse.</p>
+              ) : (
+                <>
+                  <label>Ta reponse</label>
+                  <textarea
+                    value={answer}
+                    onChange={(e) => setAnswer(e.target.value)}
+                    rows={4}
+                    placeholder={room.holesCount === 2 ? 'texte1 | texte2' : 'texte'}
+                    disabled={submitted}
+                  />
+                  <div className="row">
+                    <button
+                      className="btn"
+                      onClick={() => {
+                        socket.emit('round:submit', { answer });
+                        setSubmitted(true);
+                      }}
+                      disabled={!shouldAnswer || submitted}
+                    >
+                      {submitted ? 'Reponse envoyee' : 'Envoyer'}
+                    </button>
+                    {(isHost || isJudge) && (
+                      <button className="btn secondary" onClick={() => socket.emit('round:lock')}>
+                        Verrouiller les reponses
+                      </button>
+                    )}
+                  </div>
+                </>
+              )}
             </>
           )}
 

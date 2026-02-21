@@ -12,7 +12,7 @@ function formatTimer(value: number) {
 
 export function RoundPage() {
   const navigate = useNavigate();
-  const { currentRound, players, settings, submitAnswer, lockRound } = useGame();
+  const { currentRound, players, judgeId, settings, submitAnswer, lockRound } = useGame();
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showPassScreen, setShowPassScreen] = useState(true);
@@ -37,19 +37,22 @@ export function RoundPage() {
       });
     }, 1000);
     return () => clearInterval(id);
-  }, [settings, currentIndex, players]);
+  }, [settings, currentIndex, players, judgeId]);
 
   const onTimeOver = () => {
-    for (let i = currentIndex; i < players.length; i += 1) {
-      submitAnswer(players[i].id, '');
+    const responders = players.filter((p) => p.id !== judgeId);
+    for (let i = currentIndex; i < responders.length; i += 1) {
+      submitAnswer(responders[i].id, '');
     }
     lockRound();
     navigate('/reveal');
   };
 
-  const activePlayer = useMemo(() => players[currentIndex], [players, currentIndex]);
+  const responders = useMemo(() => players.filter((p) => p.id !== judgeId), [players, judgeId]);
+  const activePlayer = useMemo(() => responders[currentIndex], [responders, currentIndex]);
+  const judgeName = useMemo(() => players.find((p) => p.id === judgeId)?.name ?? '-', [players, judgeId]);
 
-  if (!currentRound || !settings || !players.length) {
+  if (!currentRound || !settings || !players.length || responders.length < 2) {
     return <div className="card">Demarre une partie depuis l'ecran Nouvelle partie.</div>;
   }
 
@@ -58,7 +61,7 @@ export function RoundPage() {
     submitAnswer(activePlayer.id, value.trim());
     setValue('');
 
-    if (currentIndex + 1 >= players.length) {
+    if (currentIndex + 1 >= responders.length) {
       lockRound();
       navigate('/reveal');
       return;
@@ -80,6 +83,9 @@ export function RoundPage() {
         </p>
         <p>
           <strong>Template:</strong> {currentRound.template.text}
+        </p>
+        <p>
+          <strong>Juge:</strong> {judgeName} (ne participe pas aux reponses)
         </p>
         <p>
           {currentRound.template.holesCount === 2

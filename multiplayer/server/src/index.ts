@@ -148,16 +148,20 @@ function lockRound(room: RoomState): void {
   if (room.phase !== 'round') return;
   clearRoomTimer(room);
 
-  for (const player of room.players) {
-    if (!room.responses.has(player.id)) {
-      room.responses.set(player.id, '');
+  const responderIds = room.players
+    .filter((p) => p.id !== room.judgePlayerId)
+    .map((p) => p.id);
+
+  for (const responderId of responderIds) {
+    if (!room.responses.has(responderId)) {
+      room.responses.set(responderId, '');
     }
   }
 
-  const reveal: RevealResponse[] = Array.from(room.responses.entries()).map(([playerId, answerRaw], i) => ({
+  const reveal: RevealResponse[] = responderIds.map((playerId, i) => ({
     id: `resp-${room.roundIndex}-${i + 1}`,
     playerId,
-    answerRaw
+    answerRaw: room.responses.get(playerId) ?? ''
   }));
 
   reveal.sort(() => Math.random() - 0.5);
@@ -331,10 +335,12 @@ io.on('connection', (socket: Socket) => {
     if (!binding) return;
     const room = rooms.get(binding.roomId);
     if (!room || room.phase !== 'round') return;
+    if (binding.playerId === room.judgePlayerId) return;
 
     room.responses.set(binding.playerId, String(payload?.answer ?? '').slice(0, 220));
 
-    if (room.responses.size === room.players.length) {
+    const responderCount = room.players.filter((p) => p.id !== room.judgePlayerId).length;
+    if (room.responses.size >= responderCount) {
       lockRound(room);
     }
     emitRoom(room);
