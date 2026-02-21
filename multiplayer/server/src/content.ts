@@ -1,8 +1,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { ContentPack, Level, SubjectCard, TemplateCard } from './types.js';
 
-const packPath = path.resolve(process.cwd(), 'resources/packs/core.json');
+const here = path.dirname(fileURLToPath(import.meta.url));
+const candidatePackPaths = [
+  path.resolve(process.cwd(), 'resources/packs/core.json'),
+  path.resolve(process.cwd(), '../../resources/packs/core.json'),
+  path.resolve(here, '../../../resources/packs/core.json')
+];
+
+const packPath = candidatePackPaths.find((p) => fs.existsSync(p));
+if (!packPath) {
+  throw new Error(
+    `core.json introuvable. Checked: ${candidatePackPaths.join(', ')}`
+  );
+}
+
 const raw = fs.readFileSync(packPath, 'utf-8');
 const pack = JSON.parse(raw) as ContentPack;
 
